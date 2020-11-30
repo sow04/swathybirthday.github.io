@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vampire Diaries</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+.btn
+{
+  margin-left:700px;
+  margin-top:30px;
+  color:black;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+body{
+    background-color: black;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 55px;
+    background-color: #C70039 ;
+    align-items: center;
+    position: relative;
+}
+
+.logo .brand-icon {
+    font-family: 'Pacifico', cursive;
+    color: 	#F0E68C;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul.nav-menu {
+    list-style: none;
+}
+
+ul.nav-menu a.link-items {
+    color:#F0E68C;
+    text-transform: uppercase;
+    font-size: .7em;
+}
+
+.nav-menu-toggle {
+    color: 	#F0E68C;
+    display: none;
+}
+
+nav .info-toggle a {
+    color: 	#F0E68C;
+}
+
+/* content */
+
+.body-content.gallery {
+    columns: 4;
+    column-gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+  
+}
+
+.box-content {
+  z-index: -1;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    break-inside: avoid;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+}
+
+.box-content .image {
+    width: 100%;
+    position: relative;
+}
+
+.box-content .image img {
+    max-width: 100%;
+}
+
+.box-content .title {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    align-items: center;
+}
+
+.box-content .image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.219);
+    display: none;
+}
+
+.box-content .image:hover::before {
+    display: block;
+    cursor: pointer;
+}
+
+.box-content .title a {
+    color: #38443d;
+}
+
+.contribute {
+    display: flex;
+    align-items: center;
+}
+
+.contribute .profile-picture {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #000;
+    margin-right: 10px;
+}
+
+.contribute .profile-picture img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+/* loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    /* background-image: linear-gradient(90deg, #ffbb8e, #fde7d9, #ffd3b6); */
+    background-image: radial-gradient(circle, #ffbb8e, #fde7d9, #ffd3b6);
+    /* background-color: #ffd3b6c9; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loader h2 {
+    display: block;
+    position: relative;
+    /* top: 13%; */
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    z-index: 1001;
+    animation: myMove 1.5s infinite alternate;
+    background: transparent;
+}
+
+.load {
+    display: block;
+    position: relative;
+    /* left: 45%;
+    top: 20%; */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* margin: auto; */
+    border: 5px solid transparent;
+    /* border-top-color: #3498db;
+    border-bottom-color: #3498db; */
+    border-top-color: 	#F0E68C;
+    border-bottom-color: 	#F0E68C;
+    z-index: 1001;
+    animation: spin .5s ease-in-out infinite;
+}
+
+.load::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-left-color: 	#F0E68C;
+    border-right-color: 	#F0E68C;
+    /* border-left-color: #e74c3c;
+    border-right-color: #e74c3c; */
+    z-index: 1001;
+    animation: spin .5s ease-in-out infinite;
+}
+
+.load::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: 	#F0E68C;
+    border-bottom-color: 	#F0E68C;
+    /* border-top-color: #f9c922;
+    border-bottom-color: #f9c922; */
+    z-index: 1001;
+    animation: spin .5s ease-in-out infinite;
+}
+
+.loader-section.section-left {
+    transform: translateX(-100%);
+    transition: all .7s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    /* display: none; */
+}
+
+.loader-section.section-right {
+    transform: translateX(100%);
+    transition: all .7s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    /* display: none; */
+}
+
+@keyframes myMove {
+    0% {
+        opacity: 100;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width:662px) {
+    .nav-menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    ul.nav-menu li.menu-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ul.nav-menu {
+        position: absolute;
+        background-color: #C70039 ;
+        /* transform: translateY(-5000px); */
+        width: 100%;
+        transition: all .5s ease-in-out;
+        top: 0;
+        left: 0;
+        margin-top: 55px;
+        /* z-index: -1; */
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    nav ul.nav-menu.active {
+        /* transform: translateY(0); */
+        max-height: 100vh;
+    }
+
+    ul.nav-menu a.link-items {
+        padding: 25px;
+    }
+
+    ul.nav-menu a.link-items:hover {
+        background-color: #C70039 ;
+    }
+}
+
+/* responsive breakpoint */
+@media screen and (max-width:1200px) {
+    .content .body-content.gallery {
+        columns: 3;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .content .body-content.gallery {
+        columns: 2;
+    }
+
+}
+
+@media screen and (max-width:576px) {
+    .content .body-content.gallery {
+        columns: 1;
+    }
+
+}
+
+audio
+{
+    display: none;
+}
+</style>
+
+<body>
+    <section class="loader">
+        <div class="box-loader">
+            <div class="load"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-left"></div>
+            <h2>loading...</h2>
+        </div>
+    </section>
+    <nav>
+        <div class="nav-menu-toggle">
+            <i class="fas fa-hamburger"></i>
+        </div>
+        <div class="logo">
+            <a href="https://upload.wikimedia.org/wikipedia/commons/2/2e/Tvd_logo.PNG" class="brand-icon">The Vampire Diaries</a>
+        </div>
+      
+        <div class="info-toggle">
+            <a href="#"><i class="fas fa-sign-in-alt"></i></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-16">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Tvd_logo.PNG">
+            </div>
+        </div>
+    </div>
+    <audio id="myAudio" controls autoplay >
+        <source src="music/Vampire.mp3" type="audio/mpeg" />
+        This text displays if the audio tag isn't supported.
+    </audio>
+    <section class="content">
+        <div class="head-content"></div>
+        <div class="body-content gallery">
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/1.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                       
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <!-- <i class="fas fa-heart"></i> -->
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/7.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/3.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/10.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/9.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/4.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/5.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/6.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+          
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/2.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+          
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/8.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/9.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/11.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/12.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/13.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/14.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/27.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/16.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/17.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/18.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/19.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/20.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/21.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/22.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/23.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/24.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/25.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/26.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/15.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/41.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/29.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/30.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/31.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/32.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/33.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/34.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/35.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/36.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/37.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/38.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/39.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/40.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/28.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/42.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/43.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/44.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/45.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/46.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/47.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/48.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/49.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/50.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/51.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/52.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="image">
+                    <a href="#">
+                        <img src="image/vampire/53.jpg" alt="fullimages">
+                    </a>
+                </div>
+                <div class="title">
+                    <a href="#" class="contribute">
+                        <h5>fauzan ahmad</h5>
+                    </a>
+                    <a href="#" class="add-whist">
+                        <i class="fas fa-heart"></i>
+                        <!-- <i class="far fa-heart"></i> -->
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <button type="button" class="btn btn-danger"  onclick="validateForm()">Learn More</button>
+    <script type="text/javascript">
+ 
+// Not Edge, do nothing
+
+    function validateForm() {
+  
+    location.href = "photo2.html";
+
+}
+    const getToggleMenu = document.querySelector(".nav-menu-toggle");
+const getNavMenu = document.querySelector(".nav-menu");
+
+getToggleMenu.addEventListener('click', () => {
+    getNavMenu.classList.toggle('active');
+});
+
+const getPreloader = document.querySelector('.loader');
+window.onload = function () {
+    getPreloader.style.display = "none";
+}
+
+const getWhistToggle = document.getElementsByClassName("add-whist");
+for (let i = 0; i <= getWhistToggle.length; i++) {
+    getWhistToggle[i].addEventListener('click', () => {
+        getWhistToggle[i].innerHTML = '<i class="fas fa-heart"></i>';
+    });
+}
+
+
+
+</script>
+</body>
+
+</html>

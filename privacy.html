@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+  /* border: 1px solid red; */
+}
+
+body {
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1553623717-091c3c3d1153?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2000&q=80');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  top: 50px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+form {
+  position: relative;
+  top: 75px;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 40px;
+  border-radius: 1%;
+  background-color: rgba(17, 17, 17, 0.9);
+  box-shadow: 2px 7.5px 5px 2px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+label {
+  font-family: inherit;
+  font-size: 1.625em;
+  text-shadow: 0 0 2px rgb(255, 255, 255);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  margin-top: 5px;
+  padding-left: 10px;
+  color: black;
+  border: 0;
+  border-radius: 2.5px;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:hover,
+textarea:focus {
+  box-shadow: 0 0 10px 4px #34495e;
+}
+
+button {
+  float: right;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  font-size: 26px;
+  font-family: inherit;
+  background-color:#34495e ;
+  color: white;
+  border: 0;
+  border-radius: 2px;
+}
+
+
+textarea {
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 13px;
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  resize: none;
+  outline: none;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 2.5px;
+}
+
+.container {
+  height: 100vh;
+}
+
+.form-group {
+  margin: 20px 0;
+}
+
+@media (max-width: 415px) {
+
+  h1 {
+    font-size: 2.5em;
+    top: 0;
+    margin: 0;
+  }
+
+  form {
+    top: 0;
+    font-family: 1em;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 737px) and (orientation: landscape) {
+  /* * {
+    border: 1px solid red;
+  } */
+
+  body {
+    height: 100%;
+  }
+
+  h1,
+  form {
+    top: 0;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 768px;
+  }
+
+}
+
+</style>
+<body>
+
+<div class="container">
+      <h1>YES...Its the time for US!</h1>
+      <form name="myForm">
+       
+          <label for="name">I hope you enjoyed the NetCelebrix...</label>
+          <label for="name">Now, to enter the next page you have to enter an 8 letter word</label>
+          
+      
+        
+        <div class="form-group">
+          <label for="phone">Answer</label>
+          <input type="text" name="name" class="form-control" placeholder="Enna apdi kupdunu kupdunu torture pannuven.." required>
+          <label for="phone">[ippo vera vali illa kuptu than aaganum]</label>
+        </div>
+      
+        
+         <p>[Note: press the button using mouse pointer]</p> <button type="button"  onclick="validateForm()"> SEND</button>
+       
+      </form>
+    </div>
+ 
+
+<script >
+
+
+
+
+function validateForm() {
+    event.preventDefault();
+
+  var x = document.forms["myForm"]["name"].value;
+  console.log(x);
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  
+  if(x.toLowerCase() == 'karthick')
+  {
+     
+     window.location.href = "end.html";
+  }
+  else{
+    alert("fail");
+    return false;
+  }
+}
+</script>
+</body>
+</html>

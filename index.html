@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Love</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+body{
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255,255,255,.75);
+  font-family: 'Anonymous Pro', monospace;  
+  background:url('https://i.ytimg.com/vi/_me0WI1vvPg/maxresdefault.jpg');
+}
+
+.type-container{
+  position: relative;
+  font-size: 2.8rem;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  
+}
+
+#line{
+  /* position: relative; */
+}
+
+.cursor{
+  height: 2rem;
+  width: 2px;
+  margin-left:2px;
+  background: rgba(255,255,255,.75);
+  animation: blinkTextCursor 800ms infinite;
+}
+
+@keyframes blinkTextCursor{
+  from{opacity: 1;}
+  to{opacity: 0;}
+}
+
+
+
+@import "compass/css3";
+ @keyframes spin {
+	 to {
+		 transform: rotate(360deg);
+	}
+}
+ .stroke-dotted {
+	 opacity: 0;
+	 stroke-dasharray: 4, 5;
+	 stroke-width: 1px;
+	 transform-origin: 50% 50%;
+	 animation: spin 4s infinite linear;
+	 transition: opacity 1s ease, stroke-width 1s ease;
+}
+ .stroke-solid {
+	 stroke-dashoffset: 0;
+	 stroke-dashArray: 300;
+	 stroke-width: 4px;
+	 transition: stroke-dashoffset 1s ease, opacity 1s ease;
+}
+ .icon {
+	 transform-origin: 50% 50%;
+	 transition: transform 200ms ease-out;
+}
+ #play:hover .stroke-dotted {
+	 stroke-width: 4px;
+	 opacity: 1;
+}
+ #play:hover .stroke-solid {
+	 opacity: 0;
+	 stroke-dashoffset: 300;
+}
+ #play:hover .icon {
+	 transform: scale(1.05);
+}
+ html {
+	 height: 100%;
+}
+
+ #play {
+	 cursor: pointer;
+	 position: absolute;
+	 top: 50%;
+	 left: 48%;
+   margin-top: 200px;
+	 transform: translateY(-50%) translateX(-50%);
+}
+ 
+.c
+{
+  padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+    </style>
+</head>
+<body>
+  
+
+ 
+<div  class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <div class="type-container">
+        <p id="line"></p>
+        <div class="cursor"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div  class="container c">
+<div class="row">
+    <div class="col-md-12">
+      <form name="myForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Type the code to enter the bDayStream</label>
+          <input type="text" name="code" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="CODE PLEASE">
+          <small id="emailHelp" class="form-text text-muted">[Hint: A name of a website that you used for n times and enjoyed in this quarantine]</small>
+        </div>
+      </div>
+    </div>
+        </form>
+
+      </div>
+      <svg version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="100px" width="100px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" onclick="validateForm()">
+  <path class="stroke-solid" fill="none" stroke="white"  d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5"/>
+  <path class="stroke-dotted" fill="none" stroke="white"  d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+    C97.3,23.7,75.7,2.3,49.9,2.5"/>
+  <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z"/>
+</svg>
+   
+    <script>
+
+
+function validateForm() {
+  var x = document.forms["myForm"]["code"].value;
+  console.log(x);
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  
+  if(x.toLowerCase() == 'netflix')
+  {
+    location.href = "home.html";
+  }
+  else{
+    alert("fail");
+  }
+
+}
+var line = document.getElementById("line");
+var txts = ['"Birthday is Coming"', '"Welcome to this NetCelebrix"','"A new series is waiting for you!"','"See What`s Next"','"A Present for Make you happy!!"'];
+var speed = 100;
+async function typewriter(txt) {
+  for(let i = 0; i < txt.length; i++){
+    line.innerHTML += txt.charAt(i);
+    await delay(speed);
+  }
+}
+
+async function reverseTypewriter(txt) {
+  for(let i = txt.length; i > 0; i--){
+    line.innerHTML = line.innerHTML.slice(0,-1)
+    await delay(speed);
+  }
+}
+
+async function writeLoop(){
+  
+  for(let i = 0; i < txts.length; i++){
+    await typewriter(txts[i])
+    await delay(1000);
+    await reverseTypewriter(txts[i]);
+    await delay(300);
+  }
+  
+  writeLoop();
+}
+
+function delay(ms){
+  return new Promise((resolve)=>{setTimeout(()=>{resolve()},ms)})
+}
+
+writeLoop();
+    </script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+
+<head>
+    <meta charset="UTF-8" />
+    <title>BrBd</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap");
+      @import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+  * {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+audio {display:none;
+    width: 200px;
+    padding-top: 10px;}
+body {
+  color: #ffffff;
+  font-family: Arial;
+  background: linear-gradient(bottom, rgb(0,0,0) 5%, rgb(29,48,18) 100%);
+  background: -o-linear-gradient(bottom, rgb(0,0,0) 5%, rgb(29,48,18) 100%);
+  background: -moz-linear-gradient(bottom, rgb(0,0,0) 5%, rgb(29,48,18) 100%);
+  background: -webkit-linear-gradient(bottom, rgb(0,0,0) 5%, rgb(29,48,18) 100%);
+  background: -ms-linear-gradient(bottom, rgb(0,0,0) 5%, rgb(29,48,18) 100%);
+
+  background: -webkit-gradient(
+	  linear,
+	  left bottom,
+	  left top,
+	  color-stop(0.05, rgb(0,0,0)),
+	  color-stop(1, rgb(29,48,18))
+  );
+}
+
+#wrap {
+  position: relative;
+}
+
+.box1 {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(-45deg, rgba(92,190,115,1) 1%,rgba(24,43,4,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(92,190,115,1) 1%, rgba(24,43,4) 100%);
+  background: -moz-linear-gradient(-45deg, rgba(92,190,115,1) 1%, rgba(24,43,4) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(92,190,115,1) 1%, rgba(24,43,4) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(92,190,115,1) 1%, rgba(24,43,4) 100%);
+
+  background: -webkit-gradient(
+	  linear,
+	  left top,
+	  right bottom,
+	  color-stop(0.05, rgb(92,190,115,1)),
+	  color-stop(1, rgb(24,43,4))
+  );
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.75);
+}
+
+.box2 {
+  position: absolute;
+  top: 160px;
+  left: 160px;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(-45deg, rgba(92,190,115,1) 1%,rgba(24,43,4,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(92,190,115,1) 1%, rgba(24,43,4) 100%);
+  background: -moz-linear-gradient(-45deg, rgba(92,190,115,1) 1%, rgba(24,43,4) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(92,190,115,1) 1%, rgba(24,43,4) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(92,190,115,1) 1%, rgba(24,43,4) 100%);
+
+  background: -webkit-gradient(
+	  linear,
+	  left top,
+	  right bottom,
+	  color-stop(0.05, rgb(92,190,115,1)),
+	  color-stop(1, rgb(24,43,4))
+  );
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.75);
+}
+
+.box-top {
+  background-color: #ffffff;
+  height: 2px;
+  width: 150px;
+  position: absolute;
+}
+
+.box-right {
+  background-color: #ffffff;
+  width: 2px;
+  height: 150px;
+  position: absolute;
+  left: 148px;
+}
+
+.box-bottom {
+  background-color: #ffffff;
+  height: 2px;
+  width: 150px;
+  position: absolute;
+  top: 148px;
+}
+
+.box-left {
+  background-color: #ffffff;
+  width: 2px;
+  height: 150px;
+  position: absolute;
+}
+
+.box-text {
+  font-size: 90px;
+  font-weight: bold;
+  position: absolute;
+  left: 25px;
+  top: 18px;
+}
+
+.box-text-top-left {
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  left: 10px;
+  top: 8px;
+}
+
+.box-text-top-right {
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  text-align: right;
+  left: 127px;
+  top: 8px;
+  line-height: 15px;
+}
+
+.box-text-bottom-left {
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 104px;
+  left: 5px;
+}
+
+.box-text-bottom-left span {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.text1 {
+  font-size: 90px;
+  font-weight: normal;
+  position: absolute;
+  left: 170px;
+  top: 30px;
+  font-family: Georgia;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.75);
+}
+
+.text2 {
+  font-size: 90px;
+  font-weight: normal;
+  position: absolute;
+  left: 320px;
+  top: 180px;
+  font-family: Georgia;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.75);
+}
+
+
+
+/* gm */
+
+ .wrapper {
+	 display: flex;
+	 align-items: flex-start;
+  
+  margin: 30px;
+
+
+}
+
+ .wrapper p {
+	 font-size: 100px;
+	 font-family: Bowlby One SC, sans-serif;
+	 transform: scale(0.9, 1) rotatey(-10deg) translatey(0px);
+	 animation: 2.2s scaling cubic-bezier(0.45, 0, 0.55, 1) infinite;
+	 text-shadow: 0 0 #093009, 0 0 #369457, 0 0 #1F6032;
+	 transform-origin: 50% 100%;
+	 color: #fff;
+	 position: relative;
+	 top: 10%;
+	 transform-style: preserve-3d;
+	 margin-right: 4px;
+}
+ .wrapper p:nth-child(1) {
+	 animation-delay: 140ms;
+}
+ .wrapper p:nth-child(2) {
+	 animation-delay: 280ms;
+}
+ .wrapper p:nth-child(3) {
+	 animation-delay: 420ms;
+}
+ .wrapper p:nth-child(4) {
+	 animation-delay: 560ms;
+}
+ .wrapper p:nth-child(5) {
+	 animation-delay: 700ms;
+}
+ @keyframes scaling {
+	 20% {
+		 text-shadow: 0px 0 #093009, 0px 0 #369457, 0px 0 #1F6032;
+		 transform: scale(0.9, 1) rotatey(-10deg);
+	}
+	 40% {
+		 transform: scale(0.9, 2) translatey(16px);
+		 text-shadow: -10px 0px #093009, -20px 0 #369457, -30px 0 #1F6032;
+	}
+	 60% {
+		 transform: scale(0.9, 1) rotatey(-5deg);
+		 text-shadow: 0px 0 #093009, 0px 0 #369457, 0px 0 #1F6032;
+	}
+	 80% {
+		 transform: scale(0.9, 2) translatey(16px);
+		 text-shadow: 10px 0px #093009, 20px 0 #369457, 30px 0 #1F6032;
+	}
+}
+ @keyframes jump {
+	 20% {
+		 transform: translatey(0) scale(0);
+		 opacity: 0;
+	}
+	 40% {
+		 transform: translatey(-50px) scale(1);
+		 opacity: 1;
+	}
+	 60% {
+		 transform: translatey(0) scale(0);
+		 opacity: 0;
+	}
+	 80% {
+		 transform: translatey(-50px) scale(1);
+		 opacity: 1;
+	}
+}
+
+/* img */
+img{
+    width: 150px;
+    height:250px;
+    /* margin-left: 150px; */
+    
+}
+/* audio */
+#showMe {
+  animation: cssAnimation 0s 27s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}
+#wrap {
+  animation: cssAnimation 0s 13s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}
+/* timer */
+
+#clock {
+  font-family: 'Orbitron', sans-serif;
+  color: #66ff99;
+  font-size: 76px;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-left: 200px;
+}
+/* frame */
+.browser-frame {
+	 background-color: #0D3E10;
+	 border: 2px solid #efefef;
+	 border-radius: 8px;
+	 padding-top: 30px;
+	 padding-right: 10px;
+	 padding-bottom: 10px;
+	 padding-left: 10px;
+	 position: relative;
+   margin-left: 200px;
+}
+ .browser-frame__browser-buttons {
+	 background-color: #eb4747;
+	 border-radius: 50%;
+	 color: #fff;
+	 position: absolute;
+	 top: 18px;
+	 width: 12px;
+	 height: 12px;
+}
+ .browser-frame__browser-buttons::before {
+	 background-color: #ebeb47;
+	 border-radius: 50%;
+	 color: #fff;
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 left: 14px;
+	 width: 12px;
+	 height: 12px;
+}
+ .browser-frame__browser-buttons::after {
+	 background-color: #99eb47;
+	 border-radius: 50%;
+	 color: #fff;
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 left: 48px;
+	 width: 12px;
+	 height: 12px;
+}
+ figure a {
+	 background: #fff;
+	 display: inline-block;
+}
+ figure img {
+	 width: 200px;
+	 height: 200px;
+}
+ figcaption {
+	 display: initial;
+	 color: #efefef;
+	 text-align: center;
+}
+ figcaption p {
+	 padding-top: 6px;
+}
+ #root {
+	 align-items: center;
+	 display: flex;
+	 justify-content: center;
+   margin-left: 100px;
+}
+ 
+ /* btn */
+.btn
+{
+  font-weight: 900!important;
+
+}
+.btn-group-lg > .btn, .btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    color: white;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    margin-top: 100px!important;
+    margin-left: 50px!important;
+}
+ 
+ h1,.modal-body{
+   font-family: Georgia;
+ }
+
+
+.modal-header
+{
+    background-color:#369457;
+}
+.modal-footer
+{
+    background-color:#369457;
+}
+.modal-body
+{
+    background-color: #0D3E10;
+}
+  </style>
+  <body>
+    <audio id="myAudio" controls autoplay >
+        <source src="music/brba.mp3" type="audio/mpeg" />
+        This text displays if the audio tag isn't supported.
+    </audio>
+    
+    <div class="wrapper">
+      <p>B</p>
+      <p>b</p>
+      <p>y</p>
+      <p></p>
+      <p>G</p>
+      <p>M</p>
+      <p>!</p>
+        <div id="clock"></div>
+      </div>
+
+      
+      <div  style="margin-left:100px"id="wrap" >
+        
+        <div class="box1">
+          <div class="box-top"></div>
+          <div class="box-right"></div>
+          <div class="box-bottom"></div>
+          <div class="box-left"></div>
+          <div class="box-text-top-left">44</div>
+          <div class="box-text-top-right">-1<br/>+1<br />+5</div>
+          <div class="box-text-bottom-left"><span>22</span><br />1-12-2020</div>
+          <div class="box-text">Bi</div>
+        </div>
+      
+        <div class="box2">
+          <div class="box-top"></div>
+          <div class="box-right"></div>
+          <div class="box-bottom"></div>
+          <div class="box-left"></div>
+          <div class="box-text-top-left">132.33</div>
+          <div class="box-text-top-right">+4</div>
+          <div class="box-text-bottom-left"><span>01</span><br />1-12-1998</div>
+          <div class="box-text">Ba</div>
+        </div>
+        
+        <div class="text1">rthday</div>
+        
+        <div class="text2">by</div>
+        <br><br>
+        <div id="root">
+            <div id="showMe" class="browser-frame">
+              <div class="browser-frame__browser-buttons"></div>
+              <figure class="js-figure-lightbox figure figure--screenshot">
+                <a href="https://didoesdigital.com">
+                    <!-- Transparent 1px image encoded as base64 data URI -->
+                    <img  src="image/brba.jpg" >
+                </a>
+                <figcaption>
+                    <audio id="showMe" style="display: block;"controls  >
+                        <source src="music/jessie.mp3" type="audio/mpeg" />
+                        This text displays if the audio tag isn't supported.
+                    </audio>
+                </figcaption>
+              </figure>
+            </div>
+            <div  id="showMe" class="row mb-6">
+              <div class="col text-center">
+                <button type="button" onclick="validateForm()" style="background-color:#DDF969; color:white; font-weight: 800;   margin-top: 100px;
+                margin-left: 100px; color: black; font-weight: 400;"class="btn btn-primary">Let's GO</button>
+             
+              </div>
+            </div>
+       
+          
+      </div>
+    
+   <!-- basic modal -->
+   <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="myModalLabel">Hey Jaanu...</h1>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>This portal is closed for 30 mins ... Give you Some time to reply the bday status, Wishes, Phone calls. Byeeeeeeee Come Back. LOVE</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" style="background-color:#DDF969; color: black; font-weight: 400;"class="btn btn-primary">NEXT</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+      </div>
+     
+      
+     
+      <script>
+      
+    function validateForm() {
+  
+  location.href = "hint.html";
+
+}
+    
+
+      //time
+      function currentTime() {
+  var date = new Date(); /* creating object of Date class */
+  var hour = date.getHours();
+  var min = date.getMinutes();
+  var sec = date.getSeconds();
+  hour = updateTime(hour);
+  min = updateTime(min);
+  sec = updateTime(sec);
+  document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
+    var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+}
+
+function updateTime(k) {
+  if (k < 10) {
+    return "0" + k;
+  }
+  else {
+    return k;
+  }
+}
+
+currentTime(); /* calling currentTime() function to initiate the process */
+
+ 
+    </script>
+  </body>
+ 
+  

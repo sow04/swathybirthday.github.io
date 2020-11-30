@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthdaay</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js' type='text/javascript'></script>
+
+    <style>
+body {
+	 padding: 0;
+	 margin: 0;
+   background: no-repeat;
+	 background: url('https://blog.screenweek.it/wp-content/uploads/2020/07/dark_opt.png');
+}
+ .drybn-polaroid {
+	 width: 300px;
+	 height: 340px;
+	 background: #fff;
+	 padding: 1rem;
+	 position: absolute;
+	 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	 transform: rotate(-2deg);
+	 bottom: 0;
+	 left: 50%;
+}
+ .drybn-polaroid:hover {
+	 cursor: grab;
+}
+ .drybn-polaroid:nth-child(2n) {
+	 transform: rotate(2deg);
+}
+ .drybn-polaroid:nth-child(3n) {
+	 transform: rotate(1deg);
+}
+ .drybn-polaroid:nth-child(4n) {
+	 transform: rotate(0deg);
+}
+ .drybn-polaroid:nth-child(5n) {
+	 transform: rotate(-3deg);
+}
+ .drybn-polaroid::after {
+	 content: "";
+	 background-color: white;
+	 height: 100%;
+	 width: 1rem;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 border: 1px solid #ddd;
+	 box-sizing: border-box;
+}
+ .drybn-polaroid::before {
+	 content: "";
+	 background-color: white;
+	 height: 100%;
+	 width: 1rem;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 border: 1px solid #ddd;
+	 box-sizing: border-box;
+}
+ .polaroid-image {
+	 width: 100%;
+	 height: calc(300px - 2rem);
+	 background: #2a2a2a;
+	 margin: 0 auto;
+	 position: relative;
+}
+ .polaroid-image img {
+	 width: 300px;
+	 height: calc(300px - 2rem);
+	 object-fit: cover;
+	 box-sizing: border-box;
+	 border: 1px solid #aaa;
+	 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) inset;
+	 filter: sepia(50%);
+}
+ .polaroid-date p {
+	 font-family: 'Wallpoet', cursive;
+	 color: #3d0400;
+	 letter-spacing: 3px;
+	 background-color: white;
+	 height: 1rem;
+	 width: 100%;
+	 margin: 0;
+	 border-bottom: 1px solid #ddd;
+	 box-sizing: border-box;
+}
+ .polaroid-caption {
+	 text-align: center;
+	 font-size: 1rem;
+	 position: relative;
+}
+ .polaroid-caption h2 {
+	 font-family: 'Gloria Hallelujah', cursive;
+	 margin: 0.5rem;
+	 transform: rotate(-2deg);
+}
+ .pin img {
+	 width: 48px;
+	 position: absolute;
+	 top: -1.75rem;
+	 left: 50%;
+	 transform: translate(-50%);
+}
+     
+</style>
+<body>
+    
+    <div class="drybn-polaroid">
+        <div class="pin">
+          <img src="https://mc-dev-assets.s3.amazonaws.com/codepen/pin.png" alt="pushpin">
+        </div>
+        <div class="drybn-polaroid__overlay">
+          <div class="drybn-polaroid__content">
+            <div class="polaroid-image">
+              <img src="https://picsum.photos/id/12/500" alt="polaroid">
+            </div>
+            <div class="polaroid-date">
+              <p>01.17.1991</p>
+            </div>
+            <div class="polaroid-caption">
+              <h2>Best Day Ever!</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="drybn-polaroid">
+        <div class="pin">
+          <img src="https://mc-dev-assets.s3.amazonaws.com/codepen/pin.png" alt="pushpin">
+        </div>
+        <div class="drybn-polaroid__overlay">
+          <div class="drybn-polaroid__content">
+            <div class="polaroid-image">
+              <img src="https://picsum.photos/id/168/500" alt="polaroid">
+            </div>
+            <div class="polaroid-date">
+              <p>11.23.1992</p>
+            </div>
+            <div class="polaroid-caption">
+              <h2>found rocks</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="drybn-polaroid">
+        <div class="pin">
+          <img src="https://mc-dev-assets.s3.amazonaws.com/codepen/pin.png" alt="pushpin">
+        </div>
+        <div class="drybn-polaroid__overlay">
+          <div class="drybn-polaroid__content">
+            <div class="polaroid-image">
+              <img src="https://picsum.photos/id/29/500" alt="polaroid">
+            </div>
+            <div class="polaroid-date">
+              <p>10.14.1995</p>
+            </div>
+            <div class="polaroid-caption">
+              <h2>What a View</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="drybn-polaroid">
+        <div class="pin">
+          <img src="https://mc-dev-assets.s3.amazonaws.com/codepen/pin.png" alt="pushpin">
+        </div>
+        <div class="drybn-polaroid__overlay">
+          <div class="drybn-polaroid__content">
+            <div class="polaroid-image">
+              <img src="https://picsum.photos/id/197/500" alt="polaroid">
+            </div>
+            <div class="polaroid-date">
+              <p>03.18.1998</p>
+            </div>
+            <div class="polaroid-caption">
+              <h2>Im Outa Here</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="drybn-polaroid">
+        <div class="pin">
+          <img src="https://mc-dev-assets.s3.amazonaws.com/codepen/pin.png" alt="pushpin">
+        </div>
+        <div class="drybn-polaroid__overlay">
+          <div class="drybn-polaroid__content">
+            <div class="polaroid-image">
+              <img src="https://picsum.photos/id/529/500" alt="polaroid">
+            </div>
+            <div class="polaroid-date">
+              <p>07.04.2002</p>
+            </div>
+            <div class="polaroid-caption">
+              <h2>Back Again</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="drybn-polaroid">
+        <div class="pin">
+          <img src="https://mc-dev-assets.s3.amazonaws.com/codepen/pin.png" alt="pushpin">
+        </div>
+        <div class="drybn-polaroid__overlay">
+          <div class="drybn-polaroid__content">
+            <div class="polaroid-image">
+              
+            </div>
+            <div class="polaroid-date">
+              <p>08.07.2003</p>
+            </div>
+            <div class="polaroid-caption">
+              <h2>|</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+	
+
+<script type='text/javascript'>
+	$( function() {
+    $( ".drybn-polaroid" ).draggable();
+  
+    $(".drybn-polaroid").on("mousedown", function(event){
+       $(event.currentTarget).find(".pin").hide();
+    });
+    $(".drybn-polaroid").on("mouseup", function(event){
+       $(event.currentTarget).find(".pin").show();
+    });
+  } );
+</script>
+        <script type="text/babel">
+     
+        </script>
+        </html>
+
+
+        
+<!-- Empty element so popup.html has something to hang off of even --
+  -- when an audio source hasn't been selected. -->

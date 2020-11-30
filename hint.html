@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthdaay</title>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js' type='text/javascript'></script>
+
+    <style>
+
+        /* scratch */
+        html{background:black;color:black;-webkit-text-size-adjust:none;-webkit-touch-callout:none;}
+body,h1,h2,h3,h4,h5,h6,p{margin:0;}body{font:13px/1.5 arial;font-family: 'Dancing Script', Georgia, Times, serif; color: white; background-color: black;}
+img{border:0;vertical-align:middle;}body{padding:20px 0;}
+.hide{display: none;}
+#title{font-size:18px;text-align:center;}
+.box, .content{width:400px;height:360px;}
+.box img{max-width:400px;max-height: 360px;}
+.box{position:relative;overflow:hidden;margin:0 auto;}
+.content{position: relative;overflow:hidden;text-align:center;background:#FFF;}
+.mask{position:absolute;top:0;left:0;width:400px;height:360px;cursor: pointer;}
+
+/* button */
+
+p{
+  color:#fff;
+  text-align: center;
+  padding-top: 500px;
+  font-size: 10px;
+}
+
+a{
+   text-decoration:none;
+   color:#fff;
+}
+
+a:hover{
+   color:#2ecc71;
+}
+
+.main{
+  width: 100%;
+}
+
+.sub-main{
+  width: 30%;
+  margin:22px;
+  float: left;
+}
+
+.button-one, .button-two, .button-three{
+  text-align: center;
+  cursor: pointer;
+  font-size:24px;
+  margin: 0 0 0 100px;
+}
+
+
+
+/*Button One*/
+.button-one {
+  padding:20px 60px;
+  outline: none;
+  background-color: #27ae60;
+  border: none;
+  border-radius:5px;
+  box-shadow: 0 9px #95a5a6;
+}
+
+.button-one:hover{
+  background-color: #2ecc71;
+}
+
+.button-one:active {
+  background-color: #2ecc71;
+  box-shadow: 0 5px #95a5a6;
+  transform: translateY(4px);
+}
+
+
+/*Button Two*/
+.button-two {
+  border-radius: 4px;
+  background-color:#d35400;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+}
+
+
+.button-two span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-two span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-two:hover span {
+  padding-right: 25px;
+}
+
+.button-two:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+/*Button Three*/
+.button-three {
+    position: relative;
+    background-color:black;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    color: black;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.button-three:hover{
+   background:#fff;
+   box-shadow:0px 2px 10px 5px #97B1BF;
+   color:#000;
+}
+
+.button-three:after {
+    content: "";
+    background:black!important;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button-three:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+header {
+      text-align: center;
+      padding: 45px;
+    }
+  
+  
+  
+    
+  
+    div {
+      border-radius: 10px;
+      margin: 100px auto 0;
+      text-align: center;
+    }
+  
+    h1 {
+      font-size: 34px;
+      font-weight: normal;
+      line-height: 45px;
+      margin-top: 0;
+    }
+  
+    h2 {
+      font-size: 30px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+  
+    @media (max-width: 767px) {
+      div {
+        margin: 75px 20px;
+      }
+    }
+</style>
+<body>
+    <div>
+        <h1>Sorry!</h1>
+        <h1>Hey <span style="color:#F20D09;">Jaanu...</span></h1>
+        <h2>This page is unavailable. Try again later.</h2>
+        <h2>This portal is closed now. Go and reply the bday status, Wishes, Phone calls. Byeeeeeeee Come Back.....<span style="color:#F20D09;">LOVE</span> </h2>
+      </div>
+    <!-- <div class="box">
+    <div class="content">
+            <p>Copy this and open in new tab</p>
+            <p>file:///C:/Users/Admin/Desktop/SWATHY/app/hint.html</p>
+            
+    </div>
+    <div class="mask"><canvas id="j-cvs"></canvas></div>
+    </div>
+    <div id="debug"></div> -->
+    
+    <button class="button-three" type="submit" onclick="validateForm()">Fool..Click Me</button>
+    </body>
+      
+
+      
+   
+<script type='text/javascript'>
+	
+
+/*
+author: kairyou
+*/
+
+var doc = document,
+    cvs = doc.getElementById('j-cvs'), ctx,
+config = {
+    w: 400, h: 360
+},
+mouseDown = false;
+
+var debug = function(msg){
+    var obj = doc.getElementById('debug');
+    obj.innerHTML += msg + '<br>';
+}
+
+function getLocalCoords(elem, ev) {
+    var ox = 0, oy = 0;
+    var first;
+    var pageX, pageY;
+    // currentTarget element.
+    while (elem != null) {
+        ox += elem.offsetLeft;
+        oy += elem.offsetTop;
+        elem = elem.offsetParent;
+    }
+    // fix,<=IE8
+    if ("changedTouches" in ev) {
+        first = ev.changedTouches[0];
+        pageX = first.pageX;
+        pageY = first.pageY;
+    } else {
+        pageX = ev.pageX;
+        pageY = ev.pageY;
+    }
+    return { 'x': pageX - ox, 'y': pageY - oy };
+}
+function diffTransSize(cxt, threshold, callback){
+    if (!'getImageData' in ctx) return; // <=IE8 不支持
+    threshold = threshold || 0.5;
+    if (threshold >1 || threshold < 0) threshold = 1;
+    var imageData = ctx.getImageData(0, 0, cvs.width, cvs.height),
+        pix = imageData.data,
+        pixLength = pix.length,
+        pixelSize = pixLength*0.25;
+    var i = 1, k, l=0;
+    for (; i <= pixelSize; i++) { // 3, 7, 11 -> 4n-1
+        if (0 === pix[4*i-1]) l++;
+    };
+    if (l>pixelSize * threshold) {
+        callback.apply(ctx, [l]);
+    };
+}
+function scratchLine(cvs, x, y, fresh) {
+    ctx = cvs.getContext('2d');
+    // sumsung Android 4.1.2, 4.2.2 default browser does not render, https://goo.gl/H5lwgo
+    ctx.globalCompositeOperation = 'destination-out'; 
+
+    ctx.lineWidth = 45;
+    ctx.lineCap = ctx.lineJoin = 'round';
+    ctx.strokeStyle = 'rgba(0,0,0,1)'; //'#000';
+    if (fresh) {
+        ctx.beginPath();
+        // bug WebKit/Opera/IE9: +0.01
+        ctx.moveTo(x+0.1, y);
+    }
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    // fix sumsung bug
+    var style = cvs.style; // cursor/lineHeight
+    style.lineHeight = style.lineHeight == '1' ? '1.1' : '1';
+
+   
+}
+function setupCanvases() {
+    cvs.width = config.w;
+    cvs.height = config.h;
+    var ctx = cvs.getContext("2d");
+    // add mask
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, cvs.width, cvs.height);
+    // On mouse down
+    var mousedown_handler = function(e) {
+        var local = getLocalCoords(cvs, e);
+        mouseDown = true;
+        scratchLine(cvs, local.x, local.y, true);
+        // debug('touchstart')
+        if (e.cancelable) { e.preventDefault(); }
+        return false;
+    };
+    // On mouse move
+    var mousemove_handler = function(e) {
+        // debug('touchmove')
+        if (!mouseDown) { return true; }
+        var local = getLocalCoords(cvs, e);
+        // debug(local.x + ',' + local.y);
+        scratchLine(cvs, local.x, local.y, false);
+
+        if (e.cancelable) { e.preventDefault(); }
+        return false;
+    };
+    // On mouseup
+    var mouseup_handler = function(e) {
+        // debug('touchend')
+        if (mouseDown) {
+            mouseDown = false;
+            if (e.cancelable) { e.preventDefault(); }
+            return false;
+        }
+        return true;
+    };
+    on(cvs, 'mousedown', mousedown_handler);
+    on(cvs, 'touchstart', mousedown_handler);
+    on(window, 'mousemove', mousemove_handler);
+    on(window, 'touchmove', mousemove_handler);
+    on(window, 'mouseup', mouseup_handler);
+    on(window, 'touchend', mouseup_handler);
+}
+function on(E, N, FN){
+    E.addEventListener ? E.addEventListener(N, FN, !1) : E.attachEvent('on' + N, FN);
+}
+setupCanvases();
+
+    function validateForm() {
+  
+  location.href = "test.html";
+
+}
+
+</script>
+        <script type="text/babel">
+     
+        </script>
+        </html>
+
+
+        
+<!-- Empty element so popup.html has something to hang off of even --
+  -- when an audio source hasn't been selected. -->

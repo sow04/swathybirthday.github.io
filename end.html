@@ -1,0 +1,312 @@
+<html>
+  <title>Swathick</title>
+
+    <head>
+        <style>
+
+:root {
+  --dark: #373349;
+  --shadow: rgba(0,0,0,.2);
+}
+
+html, body {
+  background-color: var(--dark);
+  margin: 5px;
+}
+img
+{
+    display: block;
+}
+
+.container > a {
+ 
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+.container > a > img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+
+.container {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 120px;
+  grid-auto-flow: dense;
+}
+
+.horizontal {
+  grid-column: span 2;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.btn {
+	 box-sizing: border-box;
+	 appearance: none;
+	 background-color: transparent;
+	 border: 2px solid #e74c3c;
+	 border-radius: 0.6em;
+	 color: #e74c3c;
+	 cursor: pointer;
+	 display: flex;
+	 align-self: center;
+	 font-size: 1rem;
+	 font-weight: 400;
+	 line-height: 1;
+	 margin: 20px;
+	 padding: 1.2em 2.8em;
+	 text-decoration: none;
+	 text-align: center;
+	 text-transform: uppercase;
+	 font-family: 'Montserrat', sans-serif;
+	 font-weight: 700;
+}
+ .btn:hover, .btn:focus {
+	 color: #fff;
+	 outline: 0;
+}
+
+.fifth {
+	 border-color:white;
+	 border-radius: 0;
+	 color: #8e44ad;
+	 position: relative;
+	 overflow: hidden;
+	 z-index: 1;
+	 transition: color 150ms ease-in-out;
+}
+ .fifth:after {
+	 content: '';
+	 position: absolute;
+	 display: block;
+	 top: 0;
+	 left: 50%;
+	 transform: translateX(-50%);
+	 width: 0;
+	 height: 100%;
+	 background: #8e44ad;
+	 z-index: -1;
+	 transition: width 150ms ease-in-out;
+}
+ .fifth:hover {
+	 color: #fff;
+}
+ .fifth:hover:after {
+	 width: 110%;
+}
+        </style>
+    </head>
+  <body>
+    <div class="container">
+      <a href="https://source.unsplash.com/600x600/?sig=1" data-lightbox="homePortfolio">
+        <img src="image/us/1.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/600x800/?sig=12" data-lightbox="homePortfolio" >
+        <img src="image/us/2.jpg"/>
+      </a>
+      <a href="https://source.unsplash.com/600x800/?sig=12" data-lightbox="homePortfolio" >
+        <img src="image/us/5.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/800x600/?sig=71" data-lightbox="homePortfolio" >
+        <img src="image/us/4.jpg"/>
+      </a>
+      <a href="https://source.unsplash.com/600x800/?sig=12" data-lightbox="homePortfolio" >
+        <img src="image/us/6.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/600x600/?sig=40" data-lightbox="homePortfolio">
+        <img src="image/us/3.jpg"/>
+      </a>
+
+      <a href="https://source.unsplash.com/600x800/?sig=12" data-lightbox="homePortfolio" >
+        <img src="image/us/7.jpg"/>
+      </a>
+      <a href="https://source.unsplash.com/600x800/?sig=12" data-lightbox="homePortfolio" >
+        <img src="image/us/8.jpg"/>
+      </a>
+      <a href="https://source.unsplash.com/600x600/?sig=32" data-lightbox="homePortfolio">
+        <img src="image/us/9.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/800x800/?sig=7" data-lightbox="homePortfolio" >
+        <img src="image/us/10.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/600x600/?sig=111" data-lightbox="homePortfolio">
+        <img src="image/us/11.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/600x800/?sig=94" data-lightbox="homePortfolio" class="vertical">
+        <img src="image/us/12.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/600x600/?sig=11" data-lightbox="homePortfolio">
+        <img src="image/us/13.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/800x600/?sig=68" data-lightbox="homePortfolio" class="horizontal">
+        <img src="image/us/15.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/600x600/?sig=24" data-lightbox="homePortfolio">
+        <img src="image/us/14.jpg"/>
+      </a>
+      
+      
+      <a href="https://source.unsplash.com/800x800/?sig=55" data-lightbox="homePortfolio" class="big">
+        <img src="image/us/36.jpg"/>
+      </a>
+      <a href="https://source.unsplash.com/800x800/?sig=157" data-lightbox="homePortfolio" class="vertical">
+        <video width="400" height="250" controls>
+            <source src="vid/bloop/1.mp4" type="video/mp4">
+           
+            Your browser does not support HTML video.
+          </video>
+      </a>
+      <a href="https://source.unsplash.com/600x600/?sig=56" data-lightbox="homePortfolio">
+        <img src="image/us/17.jpg"/>
+      </a>
+     
+      <a href="https://source.unsplash.com/800x600/?sig=186" data-lightbox="homePortfolio" class="horizontal">
+        <img src="image/us/18.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/600x600/?sig=117" data-lightbox="homePortfolio" >
+        <img src="image/us/22.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/800x800/?sig=157" data-lightbox="homePortfolio" class="big">
+        <img src="image/us/20.jpg"/>
+      </a>
+     
+      <a href="https://source.unsplash.com/600x600/?sig=287" data-lightbox="homePortfolio">
+        <img src="image/us/19.jpg"/>
+      </a>
+      
+      <a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" class="vertical">
+        <img src="image/us/23.jpg"/>
+      </a>
+      <a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+        <img src="image/us/21.jpg"/>
+      </a>
+        <a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+            <img src="image/us/24.jpg"/>
+      </a>
+      <a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+        <img src="image/us/25.jpg"/>
+  </a>
+  <a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/26.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/27.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/28.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/29.jpg"/>
+</a>
+
+
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/30.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/31.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/32.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio"  >
+    <img src="image/us/33.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/34.jpg"/>
+</a>
+
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/35.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/16.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/37.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/38.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/39.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/40.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/41.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/42.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/43.jpg"/>
+</a>
+
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/44.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/45.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/46.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/47.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/48.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/49.jpg"/>
+</a>
+<a href="https://source.unsplash.com/600x600/?sig=56" data-lightbox="homePortfolio">
+    <img src="image/us/17.jpg"/>
+  </a>
+ 
+  <a href="https://source.unsplash.com/800x600/?sig=186" data-lightbox="homePortfolio" class="horizontal">
+    <img src="image/us/18.jpg"/>
+  </a>
+  
+<a href="https://source.unsplash.com/600x800/?sig=307" data-lightbox="homePortfolio" >
+    <img src="image/us/25.jpg"/>
+</a>
+    </div>
+    <button class="btn fifth" onclick="validateForm()">QUIT</button>
+    <script>
+
+function validateForm() {
+  
+  location.href = "ticket.html";
+
+}
+    </script>
+  </body>
+</html>

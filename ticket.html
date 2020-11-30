@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy it soon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js' type='text/javascript'></script>
+
+    <style>
+        body{
+            background-color: black;        }
+        .cardWrap {
+	 width: 27em;
+	 margin: 3em auto;
+	 color: #fff;
+	 font-family: sans-serif;
+}
+ .card {
+	 background: linear-gradient(to bottom, #e84c3d 0%, #e84c3d 26%, #ecedef 26%, #ecedef 100%);
+	 height: 11em;
+	 float: left;
+	 position: relative;
+	 padding: 1em;
+	 margin-top: 100px;
+}
+ .cardLeft {
+	 border-top-left-radius: 8px;
+	 border-bottom-left-radius: 8px;
+     width: 16em;
+     height: auto;
+}
+ .cardRight {
+	 width: 8.5em;
+	 border-left: 0.18em dashed #fff;
+	 border-top-right-radius: 8px;
+     border-bottom-right-radius: 8px;
+     height: 192px;
+}
+ .cardRight:before, .cardRight:after {
+	 content: "";
+	 position: absolute;
+	 display: block;
+	 width: 0.9em;
+	 height: 0.9em;
+	 background: #fff;
+	 border-radius: 50%;
+	 left: -0.5em;
+}
+ .cardRight:before {
+	 top: -0.4em;
+}
+ .cardRight:after {
+	 bottom: -0.4em;
+}
+ h1 {
+	 font-size: 1.1em;
+	 margin-top: 0;
+}
+ h1 span {
+	 font-weight: normal;
+}
+ .title, .name, .seat, .time {
+	 text-transform: uppercase;
+	 font-weight: normal;
+}
+ .title h2, .name h2, .seat h2, .time h2 {
+	 font-size: 0.9em;
+	 color: #525252;
+	 margin: 0;
+}
+ .title span, .name span, .seat span, .time span {
+	 font-size: 0.7em;
+	 color: #a2aeae;
+}
+ .title {
+	 margin: 2em 0 0 0;
+}
+ .name, .seat {
+	 margin: 0.7em 0 0 0;
+}
+ .time {
+	 margin: 0.7em 0 0 1em;
+}
+ .seat, .time {
+	 float: left;
+}
+ .eye {
+	 position: relative;
+	 width: 2em;
+	 height: 1.5em;
+	 background: #fff;
+	 margin: 0 auto;
+	 border-radius: 1em/0.6em;
+	 z-index: 1;
+}
+ .eye:before, .eye:after {
+	 content: "";
+	 display: block;
+	 position: absolute;
+	 border-radius: 50%;
+}
+ .eye:before {
+	 width: 1em;
+	 height: 1em;
+	 background: #e84c3d;
+	 z-index: 2;
+	 left: 8px;
+	 top: 4px;
+}
+ .eye:after {
+	 width: 0.5em;
+	 height: 0.5em;
+	 background: #fff;
+	 z-index: 3;
+	 left: 12px;
+	 top: 8px;
+}
+ .number {
+	 text-align: center;
+	 text-transform: uppercase;
+}
+ .number h3 {
+	 color: #e84c3d;
+	 margin: 0.9em 0 0 0;
+	 font-size: 2.5em;
+}
+ .number span {
+	 display: block;
+	 color: #a2aeae;
+}
+ .barcode {
+	 height: 2em;
+	 width: 0;
+	 margin: 1.2em 0 0 0.8em;
+	 box-shadow: 1px 0 0 1px #343434, 5px 0 0 1px #343434, 10px 0 0 1px #343434, 11px 0 0 1px #343434, 15px 0 0 1px #343434, 18px 0 0 1px #343434, 22px 0 0 1px #343434, 23px 0 0 1px #343434, 26px 0 0 1px #343434, 30px 0 0 1px #343434, 35px 0 0 1px #343434, 37px 0 0 1px #343434, 41px 0 0 1px #343434, 44px 0 0 1px #343434, 47px 0 0 1px #343434, 51px 0 0 1px #343434, 56px 0 0 1px #343434, 59px 0 0 1px #343434, 64px 0 0 1px #343434, 68px 0 0 1px #343434, 72px 0 0 1px #343434, 74px 0 0 1px #343434, 77px 0 0 1px #343434, 81px 0 0 1px #343434;
+}
+ 
+/* button */
+
+p{
+  color:#fff;
+  text-align: center;
+  padding-top: 500px;
+  font-size: 10px;
+}
+
+a{
+   text-decoration:none;
+   color:#fff;
+}
+
+a:hover{
+   color:#2ecc71;
+}
+
+.main{
+  width: 100%;
+}
+
+.sub-main{
+  width: 30%;
+  margin:22px;
+  float: left;
+}
+
+.button-one, .button-two, .button-three{
+  text-align: center;
+  cursor: pointer;
+  font-size:24px;
+  margin: 0 0 0 100px;
+}
+
+
+
+/*Button One*/
+.button-one {
+  padding:20px 60px;
+  outline: none;
+  background-color: #27ae60;
+  border: none;
+  border-radius:5px;
+  box-shadow: 0 9px #95a5a6;
+}
+
+.button-one:hover{
+  background-color: #2ecc71;
+}
+
+.button-one:active {
+  background-color: #2ecc71;
+  box-shadow: 0 5px #95a5a6;
+  transform: translateY(4px);
+}
+
+
+/*Button Two*/
+.button-two {
+  border-radius: 4px;
+  background-color:#d35400;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+}
+
+
+.button-two span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-two span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-two:hover span {
+  padding-right: 25px;
+}
+
+.button-two:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+/*Button Three*/
+.button-three {
+    position: relative;
+    background-color: #e84c3d;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.button-three:hover{
+   background:#fff;
+   box-shadow:0px 2px 10px 5px #97B1BF;
+   color:#000;
+}
+
+.button-three:after {
+    content: "";
+    background: #e84c3d;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button-three:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+</style>
+<body>
+    <div class="cardWrap">
+        <div class="card cardLeft">
+          <h1>SK <span>Cinemas</span></h1>
+          <div class="title">
+            <h2>Ammu's Birthday</h2>
+            <span>movie</span>
+          </div>
+          <div class="name">
+            <h2>Swathy</h2>
+            <span>name</span>
+          </div>
+          <div class="seat">
+            <h2>104</h2>
+            <span>seat</span>
+          </div>
+          <div class="time">
+            <h2>12:00</h2>
+            <span>time</span>
+          </div>
+          
+        </div>
+        <div class="card cardRight">
+          <div class="eye"></div>
+          <div class="number">
+            <h3>104</h3>
+            <span>seat</span>
+          </div>
+          <div class="barcode"></div>
+        </div>
+      
+      </div>
+
+      <div class="sub-main">
+        <button class="button-three"  onclick="validateForm()">BUY NOW</button>
+      </div>
+
+      
+   
+<script type='text/javascript'>
+	
+
+    function validateForm() {
+  
+  location.href = "video.html";
+
+}
+
+</script>
+        <script type="text/babel">
+     
+        </script>
+        </html>
+
+
+        
+<!-- Empty element so popup.html has something to hang off of even --
+  -- when an audio source hasn't been selected. -->
